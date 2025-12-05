@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 15% 97%;
+    --foreground: 25 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 12%;
+
+    /* Kenyan-inspired earth tones with safari vibes */
+    --primary: 145 63% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 145 63% 42%;
+
+    --secondary: 30 25% 93%;
+    --secondary-foreground: 25 30% 12%;
+
+    --muted: 30 15% 93%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 14 78% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 145 63% 32%;
+
+    --success: 145 63% 32%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 145 50% 94%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --vacant: 30 15% 90%;
+    --vacant-foreground: 25 15% 45%;
+
+    /* Kenyan accent colors */
+    --kenya-green: 145 100% 25%;
+    --kenya-red: 0 100% 36%;
+    --kenya-gold: 45 100% 50%;
+    --safari-brown: 30 40% 35%;
+    --savanna: 45 35% 75%;
+
+    --radius: 0.75rem;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+    
+    --gradient-primary: linear-gradient(135deg, hsl(145 63% 32%), hsl(145 63% 42%));
+    --gradient-success: linear-gradient(135deg, hsl(145 63% 32%), hsl(145 63% 42%));
+    --gradient-accent: linear-gradient(135deg, hsl(14 78% 50%), hsl(30 80% 55%));
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(30 15% 98%));
+    --gradient-safari: linear-gradient(135deg, hsl(30 40% 35%), hsl(25 35% 45%));
+
+    --sidebar-background: 30 15% 97%;
+    --sidebar-foreground: 25 30% 26%;
+    --sidebar-primary: 145 63% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 25% 93%;
+    --sidebar-accent-foreground: 25 30% 12%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 145 63% 32%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-safari {
+    background: var(--gradient-safari);
+  }
+  
+  .shadow-elegant {
+    box-shadow: 0 10px 30px -10px hsl(145 63% 32% / 0.3);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 2px 15px -3px rgb(0 0 0 / 0.07), 0 10px 20px -2px rgb(0 0 0 / 0.04);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Kenyan pattern overlay */
+  .pattern-kanga {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      hsl(145 63% 32% / 0.03) 10px,
+      hsl(145 63% 32% / 0.03) 20px
+    );
+  }
+
+  /* M-Pesa green accent */
+  .mpesa-accent {
+    background: linear-gradient(135deg, hsl(145 100% 35%), hsl(145 80% 45%));
+  }
+}
